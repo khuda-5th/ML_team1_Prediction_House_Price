@@ -97,8 +97,8 @@
 <img width="658" alt="스크린샷 2024-03-09 오후 2 12 22" src="https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/275b3f46-0822-49e2-af76-026f70d06398">
 
 ### 머신러닝 재적용 과정
-1. 확률밀도함수 바탕으로 특성 생성: 서울특별시 집값 결정요인들의 분포를 확률밀도함수로 표현.
-2. 라쏘회귀와 XGBOOST: GRIDSEARCH / 랜덤서치를 활용해 모델의 하이퍼파라미터를 튜닝. 이를 이용해 모델을 초기화, 조정된 XGBOOST 모델의 성능 평가
+1. 확률밀도함수 바탕으로 특성 생성: 서울특별시 집값 결정요인들의 분포를 확률밀도함수로 표현함.
+2. 라쏘회귀와 XGBOOST: GRIDSEARCH / 랜덤서치를 활용해 모델의 하이퍼파라미터를 튜닝. 이를 이용해 모델을 초기화, 조정된 XGBOOST 모델의 성능을 평가함.
 3. 최종모델 적용: 자신이 원하는 조건의 '면적/층/년도/위치(X,Y)'를 입력한 뒤 2024 집값을 예측함.
 
 <img width="658" alt="스크린샷 2024-03-09 오후 2 12 39" src="https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/d2ec3063-3f81-4d24-b395-3c466fb2cdf7">
@@ -109,16 +109,21 @@
 
 ## 4. 결과해석
 
-실거래가 예측모델을 활용해보니 실제 2024년 실거래가와 최대 약 2천만원~3천만원 가량 차이가 있었고 대부분 거의 근사하였다. 
+실거래가 예측모델을 활용해보니 실제 2024년 실거래가와 최대 약 2천만원~3천만원 가량 차이가 있었고 대부분 거의 근사함. 
+<img width="658" alt="스크린샷 2024-03-09 오후 2 12 45" src="https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/6e564070-dcc2-4329-848d-d88533eb3fe7">
 
+### 연구 한계점
+1. 상권, 교통, 학군, 여가요소(녹지, 수계)등 인문적 요인은 분석하기 어려움.
+2. 시계열 데이터를 분석하기 위해서는 주기가 짧고 방대한 양의 데이터가 필요함.
 
+### 개선 방향 
+- 제작한 모델의 활용성을 높이기 위해 부동산 매매 정보 등을 포함하는 것이 필요함.
+- 예측의 정확도를 높이기 위하여 집값을 KNN모델을 활용하여 상위 그룹 (3~20개) 으로 분류하여 각 연도별로 학습이 필요함.
+
+### 추가 연구
+- 단순 상위 10% 기준 분류 모델의 Accuracy가 약 0.89로 가장 적절하여 웹 구현에 활용하였음.
+- 모델과 더불어 매매자 본인의 요구를 더할 수 있도록 예측 그룹을 제시함.
+  
 ![그림1](https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/1cb08e39-d631-4786-880a-d74f9824fe9d)
 ![그림2](https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/743fbfe8-8c8b-4d42-93e3-9ffd77d9da1a)
-
-<img width="659" alt="스크린샷 2024-03-09 오후 2 10 51" src="https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/5671da24-d4df-4544-a830-6576b923b4a9">
-
-<img width="658" alt="스크린샷 2024-03-09 오후 2 12 22" src="https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/275b3f46-0822-49e2-af76-026f70d06398">
-<img width="658" alt="스크린샷 2024-03-09 오후 2 12 39" src="https://github.com/khuda-5th/ML_team1_Prediction_House_Price/assets/158314564/d2ec3063-3f81-4d24-b395-3c466fb2cdf7">
-
-
 
